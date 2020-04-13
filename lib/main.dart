@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
     data = ThemeItem.getThemeItems();
     SharedPreferences prefs = await SharedPreferences.getInstance();
     dynTheme = prefs.getString("dynTheme") ?? 'light-purple-amber';
-    print(dynTheme);
   }
 
   @override
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
               return data[i].themeData;
             }
           }
-          return data[0].themeData;          
+          return data[0].themeData;  
         },
         themedWidgetBuilder: (context, theme) {
           return MaterialApp(
